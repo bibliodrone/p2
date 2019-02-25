@@ -46,7 +46,7 @@ require "logic.php";
                 </ul>
                 <br>
                 <label for="valueToConvert">Enter value (must be numeric)</label>
-                <input type="number" name="valueToConvert" value="<?=(isset($valueToConvert)) ? $valueToConvert : 0 ?>">
+                <input type="text" name="valueToConvert" value="<?=(isset($valueToConvert)) ? $valueToConvert : 0 ?>">
                 <br>
                 <hr>
                 <input type="submit" class="btn btn-primary" id="submitButton" value="Submit">

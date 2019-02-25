@@ -7,7 +7,7 @@ if ($submitted) {
         [
             'unitType'=>'required',
             'valueToConvert'=>'required|numeric',
-            'username' => 'required|alphaNumeric',
+            /*'username' => 'required|alphaNumeric',
             /*'email' => 'required|email',
             'url' => 'required|url',
             'username' => 'required|alphaNumeric',
