@@ -1,26 +1,24 @@
 # p2
-*Any instructions/notes in italics should be removed from the template before submitting* 
+
 
 # Project 2
-+ By: *your first and last name*
-+ Production URL: <http://p2.yourdomain.com>
++ By: Gerald Walden
++ Production URL: <http://p2.geraldbrentwalden.me>
 
 ## Outside resources
-*Your list of outside resources go here*
+I used 'validate.php', with my validation rules added, along with 'Form.php'
+I also made use of the error display code from the class form-validation example to handle the error banner display in my 'index.php' file.
+I used Stack Overflow for quick reference on how to trim leading zeros (if any) from the output message from 'Convert.php'.
 
 ## 3 Unique inputs
-*You don't have to list all inputs, just 3 unique ones. The following is an example of what I'd put if my project was the xkcd Password Generator:*
 
-1. *Text input to indicate number of words in password*
-2. *Checkbox to indicate whether to include a number*
-3. *Dropdown to indicate what symbol to include*
+1. Unit Type: radio buttons for Distance, Temperature, Mass.
+2. Conversion: select menu with options Imperial --> Metric and Metric --> Imperial.
+3. Value: Text input for user-entered numerical value to use in conversion.
 
 ## Class
-*List the name of the class(es) you're using, e.g. `Form.php`, `Password.php`, etc.*
+Form.php, Convert.php
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*
-
-## Notes for instructor
-*Any notes for me to refer to while grading; if none, omit this section*
 

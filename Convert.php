@@ -1,6 +1,7 @@
 <?php
 
 namespace GW;
+
 class Convert {
     /* Function convert handles unit conversions chosen by user
     @param $system -- 'tometric' or 'toimperial'
@@ -64,8 +65,9 @@ class Convert {
                 $returnValue = $valueToConvert * 2.205;
             }
         }
-    /* Assemble unit conversion output message and return to logic.php for display to user on index.php */    
-    $returnMessage = $valueToConvert.$unitA." = ".$returnValue.$unitB;
+        /* Assemble unit conversion output message and return to logic.php for display to user on index.php */
+        $valueToConvert = ltrim($valueToConvert, 0);
+        $returnMessage = $valueToConvert.$unitA." = ".$returnValue.$unitB;
         return ($returnMessage);
     }
 }
