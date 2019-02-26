@@ -1,6 +1,16 @@
+h1,
+#errors {
+    padding-left: 20px;
+}
+
 ul {
     list-style: none;
 }
+
+#main {
+    max-width: 800px;
+}
+
 .infoNote {
     font-size: smaller;
     font-style: italic;
@@ -8,17 +18,30 @@ ul {
 
 .output {
     display: block;
-    background: yellow;
+    font-size: larger;
+    background: lightyellow;
     padding: 20px;
     margin-bottom: 10px;
+    margin-left: 20px;
+    border: 2px groove gray;
+    border-radius: 5px;
+
 }
 
 fieldset {
-    margin: 20px;
+    margin-left: 20px;
     padding: 10px;
-    border: 1px solid gray;
     border-radius: 5px;
+    border: 2px groove gray;
+
 }
-#submitButton{  
+
+label {
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+#submitButton {
     margin-top: 20px;
 }

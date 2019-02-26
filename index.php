@@ -13,29 +13,34 @@ require "logic.php";
 </head>
 
 <body>
-    <form>
-        <fieldset>
-            <legend>Unit Conversion</legend>
-            <label for="unitType">Unit Type</label>
-            <ul>
-                <li><label>
-                        <input type="radio" name="unitType" value="distance" <?=(isset($unitType) && $unitType=="distance" ) ? "checked" : "" ?>>Distance
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="unitType" value="temperature" <?=(isset($unitType) && $unitType=="temperature" ) ? "checked" : "" ?>>Temperature
-                    </label>
-                    <span class="infoNote"> *Note: The mininum valid temperature (absolute zero) is -459.67 F or -273.15 C</span>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="unitType" value="mass" <?=(isset($unitType) && $unitType=="mass" ) ? "checked" : "" ?>>Mass
-                    </label>
-                </li>
-            </ul>
+    <header>
+        <h1>Unit Conversion Utility</h1>
+        <ol>
+            <li>Choose the type of unit to convert: distance, temperature, or mass.</li>
+            <li>Choose either Imperial to Metric (e.g. lbs. to kg.) or Metric to Imperial (e.g. Celsius to Fahrenheit).</li>
+            <li>Finally, enter the numerical value to convert, and click 'Submit'</li>
+        </ol>
+    </header>
+    <div id="main">
+        <form>
+            <fieldset>
+                <legend>Converter</legend>
+                <label for="unitType">Unit Type</label>
+                <ul>
+                    <li>
+                        <input type="radio" name="unitType" value="distance" <?=(isset($unitType) && $unitType=="distance" ) ? "checked" : "" ?>>Distance (mi. <-> km.)
 
-            <label for=conversion>Conversion</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="unitType" value="temperature" <?=(isset($unitType) && $unitType=="temperature" ) ? "checked" : "" ?>>Temperature (&#176;F <-> &#176;C)
+
+                            <span class="infoNote"> *Note: The mininum valid temperature (absolute zero) is -459.67&#176; F or -273.15&#176; C</span>
+                    </li>
+                    <li>
+                        <input type="radio" name="unitType" value="mass" <?=(isset($unitType) && $unitType=="mass" ) ? "checked" : "" ?>>Mass (lbs. <-> kg.)
+                    </li>
+                </ul>
+                <label for=conversion>Conversion</label>
                 <ul>
                     <li>
                         <select name="system">
@@ -45,36 +50,41 @@ require "logic.php";
                     </li>
                 </ul>
                 <br>
-                <label for="valueToConvert">Enter value (must be numeric)</label>
-                <input type="text" name="valueToConvert" value="<?=(isset($valueToConvert)) ? $valueToConvert : 0 ?>">
-                <br>
-                <hr>
-                <input type="submit" class="btn btn-primary" id="submitButton" value="Submit">
-        </fieldset>
-        <?php if (isset($returnMessage)) : ?>
-        <div class="output">
-            <p>
-                <?= $returnMessage ?>
-            </p>
-        </div>
-        <?php endif ?>
+                <label for="valueToConvert">Enter value</label><span class="infoNote"> *Must be numeric</span>
+                <ul>
+                    <li><input type="text" name="valueToConvert" value="<?=(isset($valueToConvert)) ? $valueToConvert : 0 ?>"></li>
+                </ul>
+                <input type="submit" class="btn btn-primary" id="submitButton" value="Convert!">
+            </fieldset>
 
-        <?php if (isset($errors) && $errors) : ?>
-        <div class="alert alert-danger">
-            <ul>
-                <?php foreach ($errors as $error) : ?>
-                <li>
-                    <?= $error ?>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        <?php elseif ($submitted): ?>
-        <div class="alert alert-info">
-            No errors
-        </div>
-        <?php endif ?>
+            <div class="output">
+                <?php if (isset($returnMessage)) : ?>
+                <p>
+                    <?= $returnMessage ?>
+                </p>
+                <?php endif ?>
+            </div>
 
-    </form>
-
+            <!--Error message display code (using Form.php) from class example 'Form validation'.
+            I hope it's OK to use it here with attribution; since we are using
+            Form.php in this project, I didn't see a need to 'reinvent the wheel', here-->
+            <div id="errors">
+                <?php if (isset($errors) && $errors) : ?>
+                <div class="alert alert-danger">
+                    <ul>
+                        <?php foreach ($errors as $error) : ?>
+                        <li>
+                            <?= $error ?>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php elseif ($submitted): ?>
+                <div class="alert alert-info">
+                    No errors
+                </div>
+                <?php endif ?>
+            </div>
+        </form>
+    </div>
 </body>

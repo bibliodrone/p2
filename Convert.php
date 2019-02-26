@@ -1,24 +1,32 @@
 <?php
+
 namespace GW;
 class Convert {
+    /* Function convert handles unit conversions chosen by user
+    @param $system -- 'tometric' or 'toimperial'
+    @param $unitType -- 'distance' or 'temperature' or 'mass'
+    @param $valueToConvert -- Numerical value entered by user
+    */
+    
     public function convert($system, $unitType, $valueToConvert) {
         $returnValue = "None";
         $returnMessage = "None";
         $mi = " Miles ";
         $km = " Kilometers ";
-        $fh = " Fahrenheit ";
-        $cs = " Celsius ";
+        $fh = "&#176; Fahrenheit ";
+        $cs = "&#176; Celsius ";
         $lb = " Pounds ";
         $kg = " Kilograms ";
         $absoluteZeroF = -459.67;
         $absoluteZeroC = -273.15;
         $infoNote = false;
         
+        /* Converting Imperial units to metric */
         if($system == "tometric") {
             if($unitType == "distance") {
                 $unitA = $mi;
                 $unitB = $km;
-                $returnValue = $valueToConvert * 0.6;
+                $returnValue = $valueToConvert * 0.621;
             }
             elseif($unitType == "temperature") {
                 $unitA = $fh;
@@ -31,14 +39,15 @@ class Convert {
             elseif($unitType == "mass") {
                 $unitA = $lb;
                 $unitB = $kg;
-                $returnValue = $valueToConvert * 0.4536;
+                $returnValue = $valueToConvert * 0.454;
             }
         }
+        /* Converting metric units to Imperial */
         elseif($system == "toimperial") {
             if($unitType == "distance") {
                 $unitA = $km;
                 $unitB = $mi;
-                $returnValue = $valueToConvert * 1.6;
+                $returnValue = $valueToConvert * 1.609;
             }
             elseif ($unitType == "temperature") {
                 $unitA = $cs;
@@ -55,28 +64,8 @@ class Convert {
                 $returnValue = $valueToConvert * 2.205;
             }
         }
-        
+    /* Assemble unit conversion output message and return to logic.php for display to user on index.php */    
     $returnMessage = $valueToConvert.$unitA." = ".$returnValue.$unitB;
         return ($returnMessage);
     }
 }
-    /**
-     * Properties
-     */
-    //private $request;
-    //public $hasErrors = false;
-    /**
-     * Form constructor
-     */
-    //public function __construct(array $request)
-    //{
-        # Store form data (POST or GET) in a class property called $request
-        //$this->request = $request;
-    //}
-    /**
-     * Returns true if *either* GET or POST have been submitted.
-     */
-    //public function isSubmitted()
-    //{
-        //return $_SERVER['REQUEST_METHOD'] == 'POST' || !empty($_GET);
-    //}
