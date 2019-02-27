@@ -3,7 +3,7 @@ require "validate.php";
 require "logic.php";
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Unit conversion</title>
@@ -25,32 +25,32 @@ require "logic.php";
         <form>
             <fieldset>
                 <legend>Converter</legend>
-                <label for="unitType">Unit Type</label>
+                <label>Unit Type</label>
                 <ul>
                     <li>
-                        <input type="radio" name="unitType" value="distance" <?=(isset($unitType) && $unitType=="distance" ) ? "checked" : "" ?>>Distance (mi. <-> km.)
+                        <input type="radio" name="unitType" value="distance" <?=(isset($unitType) && $unitType=="distance" ) ? "checked" : "" ?>>Distance (mi. and km.)
 
                     </li>
                     <li>
-                        <input type="radio" name="unitType" value="temperature" <?=(isset($unitType) && $unitType=="temperature" ) ? "checked" : "" ?>>Temperature (&#176;F <-> &#176;C)
+                        <input type="radio" name="unitType" value="temperature" <?=(isset($unitType) && $unitType=="temperature" ) ? "checked" : "" ?>>Temperature (&#176;F and &#176;C)
 
-                            <span class="infoNote"> *Note: The mininum valid temperature (absolute zero) is -459.67&#176; F or -273.15&#176; C</span>
+                        <span class="infoNote"> *Note: The mininum valid temperature (absolute zero) is -459.67&#176; F or -273.15&#176; C</span>
                     </li>
                     <li>
-                        <input type="radio" name="unitType" value="mass" <?=(isset($unitType) && $unitType=="mass" ) ? "checked" : "" ?>>Mass (lbs. <-> kg.)
+                        <input type="radio" name="unitType" value="mass" <?=(isset($unitType) && $unitType=="mass" ) ? "checked" : "" ?>>Mass (lbs. and kg.)
                     </li>
                 </ul>
-                <label for=conversion>Conversion</label>
+                <label>Conversion</label>
                 <ul>
                     <li>
                         <select name="system">
-                            <option value="tometric" <?=(isset($system) && $system=="tometric" ) ? "selected" : "" ?>>Imperial ---> Metric</option>
-                            <option value="toimperial" <?=(isset($system) && $system=="toimperial" ) ? "selected" : "" ?>>Metric ---> Imperial</option>
+                            <option value="tometric" <?=(isset($system) && $system=="tometric" ) ? "selected" : "" ?>>Imperial to Metric</option>
+                            <option value="toimperial" <?=(isset($system) && $system=="toimperial" ) ? "selected" : "" ?>>Metric to Imperial</option>
                         </select>
                     </li>
                 </ul>
                 <br>
-                <label for="valueToConvert">Enter value</label><span class="infoNote"> *Must be numeric</span>
+                <label>Enter value</label><span class="infoNote"> *Must be numeric</span>
                 <ul>
                     <li><input type="text" name="valueToConvert" value="<?=(isset($valueToConvert)) ? $valueToConvert : 0 ?>"></li>
                 </ul>
