@@ -66,7 +66,9 @@ class Convert {
             }
         }
         /* Assemble unit conversion output message and return to logic.php for display to user on index.php */
-        $valueToConvert = ltrim($valueToConvert, 0);
+        if($valueToConvert != "0") {
+            $valueToConvert = ltrim($valueToConvert, 0);
+            }
         $returnMessage = $valueToConvert.$unitA." = ".$returnValue.$unitB;
         return ($returnMessage);
     }
