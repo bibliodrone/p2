@@ -6,8 +6,9 @@
 + Production URL: <http://p2.geraldbrentwalden.me>
 
 ## Outside resources
-I used 'validate.php', with my validation rules added, along with 'Form.php'
-I also made use of the error display code from the class form-validation example to handle the error banner display in my 'index.php' file.
+I adapted 'validate.php', with my validation rules, to work along with 'Form.php' in my project.
+I also made use of the error display HTML code from the class form-validation example to handle the error banner display in my 'index.php' file. The section is 
+noted in the comments on the page. 
 I used Stack Overflow for quick reference on how to trim leading zeros (if any) from the output message from 'Convert.php'.
 
 ## 3 Unique inputs
@@ -19,6 +20,4 @@ I used Stack Overflow for quick reference on how to trim leading zeros (if any) 
 ## Class
 Form.php, Convert.php
 
-## Code style divergences
-*List any divergences from PSR-1/PSR-2 and course guidelines on code style*
-
+I have tried to avoid any code-style divergences.
