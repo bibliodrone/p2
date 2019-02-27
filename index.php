@@ -18,7 +18,7 @@ require "logic.php";
         <ol>
             <li>Choose the type of unit to convert: distance, temperature, or mass.</li>
             <li>Choose either Imperial to Metric (e.g. lbs. to kg.) or Metric to Imperial (e.g. Celsius to Fahrenheit).</li>
-            <li>Finally, enter the numerical value to convert, and click 'Submit'</li>
+            <li>Finally, enter the numerical value to convert, and click 'Convert'</li>
         </ol>
     </header>
     <div id="main">
