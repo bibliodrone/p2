@@ -89,3 +89,5 @@ require "logic.php";
         </form>
     </div>
 </body>
+
+</html>
