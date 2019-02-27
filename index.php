@@ -65,9 +65,10 @@ require "logic.php";
                 <?php endif ?>
             </div>
 
-            <!--Error message display code (using Form.php) from class example 'Form validation'.
+            <!--Error message display code (using Form.php) from form validation example and    
+            using 'validate.php'.
             I hope it's OK to use it here with attribution; since we are using
-            Form.php in this project, I didn't see a need to 'reinvent the wheel', here-->
+            Form.php in this project, I didn't see a need to 'reinvent the wheel'.-->
             <div id="errors">
                 <?php if (isset($errors) && $errors) : ?>
                 <div class="alert alert-danger">
